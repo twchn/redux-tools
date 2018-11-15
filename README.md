@@ -52,4 +52,4 @@ const loginReducer = createReducer({ isLogin: false }, {
 
 ## Contribution
 
-You can click [here](https://github.com/redux-tools/pulls) to contribute your fantastic idea.
+You can click [here](https://github.com/taoweicn/redux-tools/pulls) to contribute your fantastic idea.
