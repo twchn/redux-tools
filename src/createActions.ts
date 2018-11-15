@@ -7,6 +7,9 @@ import createAction from './createAction';
  * @returns {IActions<any>}
  */
 function createActions(actionType: IActionTypes): IActions<any> {
+  if (actionType == null) {
+    throw new Error('Action types must be not empty!');
+  }
   return {
     request: createAction(actionType.REQUEST),
     success: createAction(actionType.SUCCESS),

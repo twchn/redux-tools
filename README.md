@@ -20,7 +20,7 @@ $ yarn add @twcn/redux-tools
 ## Usage
 
 ```javascript
-import { createActionTypes, createActions, createReducer } from '@tw/redux-tools';
+import { createActionTypes, createActions, createReducer } from '@twcn/redux-tools';
 
 const LOGIN = createActionTypes('LOGIN');
 

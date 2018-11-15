@@ -15,4 +15,8 @@ describe('test the generating actions function', () => {
     expect(generatedActions.success(payload)).toEqual(expectedActions.success);
     expect(generatedActions.failure(payload)).toEqual(expectedActions.failure);
   });
+
+  it('should throw a error when action types is empty', () => {
+    expect(createActions).toThrow('Action types must be not empty!');
+  });
 });
