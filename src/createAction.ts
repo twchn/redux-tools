@@ -7,7 +7,7 @@ import { IAction } from './typings';
  */
 function createAction(actionType: string) {
   if (typeof actionType !== 'string') {
-    throw new Error('Action type must be a string');
+    throw new Error('Action type must be a string!');
   }
   return (payload: any): IAction<any> => {
     return {
