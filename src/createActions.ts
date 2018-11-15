@@ -1,15 +1,16 @@
 import { IActions, IActionTypes } from './typings';
+import createAction from './createAction';
 
 /**
- * generate multiple Flux Standard Actions
+ * generate multiple Flux Standard Action creators
  * @param {IActionTypes} actionType
  * @returns {IActions<any>}
  */
 function createActions(actionType: IActionTypes): IActions<any> {
   return {
-    request: payload => ({ type: actionType.REQUEST, payload }),
-    success: payload => ({ type: actionType.SUCCESS, payload }),
-    failure: payload => ({ type: actionType.FAILURE, payload })
+    request: createAction(actionType.REQUEST),
+    success: createAction(actionType.SUCCESS),
+    failure: createAction(actionType.FAILURE)
   };
 }
 
