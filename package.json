@@ -1,6 +1,6 @@
 {
   "name": "@twcn/redux-tools",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A collection of tools for quickly generating redux boilerplate code.",
   "main": "dist/index.js",
   "scripts": {
@@ -22,7 +22,7 @@
   "bugs": {
     "url": "https://github.com/taoweicn/redux-tools/issues"
   },
-  "homepage": "https://github.com/taoweicn/redux-tools#readme",
+  "homepage": "https://taoweicn.github.io/redux-tools/",
   "devDependencies": {
     "@types/jest": "^23.3.9",
     "jest": "^23.6.0",
