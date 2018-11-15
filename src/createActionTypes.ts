@@ -19,8 +19,9 @@ function createActionTypes(baseTypes: string, types: string[] = defaultTypes): I
   if (!types.every(type => typeof type === 'string')) {
     throw new Error('Types must be an array of strings!');
   }
+  const upperCaseBaseTypes = baseTypes.toUpperCase();
   return types.reduce((acc: any, type: string) => {
-    acc[type] = `${baseTypes.toUpperCase()}_${type}`;
+    acc[type] = `${upperCaseBaseTypes}_${type}`;
     return acc;
   }, {});
 }

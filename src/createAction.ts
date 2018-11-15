@@ -3,7 +3,7 @@ import { IAction, IActionCreator } from './typings';
 /**
  * generate a Flux Standard Action creator
  * @param {string} actionType
- * @returns {(payload: any) => IAction}
+ * @returns {IActionCreator<any>}
  */
 function createAction(actionType: string): IActionCreator<any> {
   if (typeof actionType !== 'string') {
