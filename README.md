@@ -7,13 +7,13 @@
 ## Installation
 
 ```bash
-$ npm install @tw/redux-tools --save 
+$ npm install @twcn/redux-tools --save 
 ```
 
 or
 
 ```bash
-$ yarn add @tw/redux-tools
+$ yarn add @twcn/redux-tools
 ```
 
 ## Usage

@@ -13,3 +13,6 @@ dist/
 
 # Mac OS configure file
 .DS_Store
+
+# Documentation folder
+docs/

@@ -1,5 +1,5 @@
 {
-  "name": "@tw/redux-tools",
+  "name": "@twcn/redux-tools",
   "version": "0.1.0",
   "description": "A collection of tools for quickly generating redux boilerplate code.",
   "main": "dist/index.js",
