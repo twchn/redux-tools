@@ -1,5 +1,7 @@
 # redux-tools
 
+[![Build Status](https://travis-ci.com/taoweicn/redux-tools.svg?branch=master)](https://travis-ci.com/taoweicn/redux-tools)
+
 > A collection of tools for quickly generating redux boilerplate code.
 
 ## Installation
@@ -48,8 +50,8 @@ const loginReducer = createReducer({ isLogin: false }, {
 
 ## Documentation
 
-[API]()
+[API](https://taoweicn.github.io/redux-tools/)
 
 ## Contribution
 
-You can click [here](https://github.com/taoweicn/redux-tools/pulls) to contribute your fantastic idea.
+You can click [here](https://github.com/taoweicn/redux-tools/pulls) to contribute your fantastic ideas.
