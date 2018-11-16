@@ -7,7 +7,7 @@
     "build": "tsc",
     "lint": "tslint -c tslint.json 'src/**/*.ts'",
     "test": "jest",
-    "doc": "typedoc --out docs/ src/",
+    "doc": "typedoc --out docs/ src/ --name redux-tools --mode file --hideGenerator",
     "pub": "npm run build && npm publish"
   },
   "repository": {
