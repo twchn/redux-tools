@@ -1,6 +1,6 @@
 {
   "name": "@twcn/redux-tools",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "A collection of tools for quickly generating redux boilerplate code.",
   "main": "dist/index.js",
   "scripts": {
