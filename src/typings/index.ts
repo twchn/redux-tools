@@ -10,9 +10,7 @@ export interface IAction<T> {
 export type IActionCreator<T> = (payload?: T) => IAction<T>;
 
 export interface IActions<T> {
-  request: IActionCreator<T>;
-  success: IActionCreator<T>;
-  failure: IActionCreator<T>;
+  [propName: string]: IActionCreator<T>;
 }
 
 export interface IHandlers<T> {
