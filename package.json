@@ -25,11 +25,11 @@
   },
   "homepage": "https://taoweicn.github.io/redux-tools/",
   "devDependencies": {
-    "@types/jest": "^23.3.9",
-    "jest": "^23.6.0",
-    "ts-jest": "^23.10.4",
-    "tslint": "^5.11.0",
-    "typedoc": "^0.13.0",
-    "typescript": "^3.1.6"
+    "@types/jest": "^24.0.20",
+    "jest": "^24.9.0",
+    "ts-jest": "^24.1.0",
+    "tslint": "^5.20.0",
+    "typedoc": "^0.15.0",
+    "typescript": "^3.6.4"
   }
 }
