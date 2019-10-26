@@ -19,7 +19,7 @@ function createActionTypes(baseTypes: string, types: string[] = defaultTypes): I
   if (!types.every(type => typeof type === 'string')) {
     throw new Error('Types must be an array of strings!');
   }
-  return types.reduce((acc: any, type: string) => {
+  return types.reduce((acc: IActionTypes, type: string) => {
     acc[type] = `${baseTypes}_${type}`;
     return acc;
   }, {});

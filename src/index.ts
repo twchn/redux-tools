@@ -1,11 +1,4 @@
-import createActionTypes from './createActionTypes';
-import createAction from './createAction';
-import createActions from './createActions';
-import createReducer from './createReducer';
-
-export {
-  createActionTypes,
-  createAction,
-  createActions,
-  createReducer
-};
+export { default as createActionTypes } from './createActionTypes';
+export { default as createAction } from './createAction';
+export { default as createActions } from './createActions';
+export { default as createReducer } from './createReducer';

@@ -1,15 +1,13 @@
 export interface IActionTypes {
-  REQUEST: string;
-  SUCCESS: string;
-  FAILURE: string;
+  [propName: string]: string;
 }
 
 export interface IAction<T> {
   type: string;
-  payload: T;
+  payload?: T;
 }
 
-export type IActionCreator<T> = (payload: T) => IAction<T>;
+export type IActionCreator<T> = (payload?: T) => IAction<T>;
 
 export interface IActions<T> {
   request: IActionCreator<T>;
