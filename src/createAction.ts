@@ -6,14 +6,13 @@ import { IAction, IActionCreator } from './typings';
  * @returns {IActionCreator<any>}
  */
 function createAction<T>(actionType: string): IActionCreator<T> {
-  if (typeof actionType !== 'string') {
+  if (typeof actionType !== 'string' || actionType === '') {
     throw new Error('Action type must be a string!');
   }
   return function actionCreator(payload?: T): IAction<T> {
-    return {
-      type: actionType,
-      payload
-    };
+    let action = { type: actionType };
+    if (payload !== undefined) action.payload = payload;
+    return payload;
   };
 }
 
