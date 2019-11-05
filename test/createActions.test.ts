@@ -1,8 +1,8 @@
 import { createActionTypes, createActions } from '../src';
 
 describe('test the generating actions function', () => {
-  it('should return three specified actions', () => {
-    const actionTypes = createActionTypes('actionType');
+  it('should return three default actions', () => {
+    const actionTypes = createActionTypes('TYPE');
     const generatedActions = createActions(actionTypes);
     const payload = { data: 1 };
     const expectedActions = {
@@ -16,7 +16,28 @@ describe('test the generating actions function', () => {
     expect(generatedActions.failure(payload)).toEqual(expectedActions.failure);
   });
 
-  it('should throw a error when action types is empty', () => {
-    expect(createActions).toThrow('Action types must be not empty!');
+  it('should return specified actions', () => {
+    const types = ['REQUEST', 'REQUEST_SUCCESS', 'REQUEST-FAILURE'];
+    const actionTypes = createActionTypes('TYPE', types);
+    const generatedActions = createActions(actionTypes);
+    const payload = { data: 2 };
+    const expectedActions = {
+      request: { type: actionTypes.REQUEST, payload },
+      requestSuccess: { type: actionTypes.REQUEST_SUCCESS, payload },
+      requestFailure: { type: actionTypes['REQUEST-FAILURE'], payload },
+    };
+
+    expect(generatedActions.request(payload)).toEqual(expectedActions.request);
+    expect(generatedActions.requestSuccess(payload)).toEqual(expectedActions.requestSuccess);
+  });
+
+  it('should throw a error when action types is not an object', () => {
+    expect(createActions).toThrow('Action types must be an object!');
+  });
+
+  it('should throw a error when action types is an empty object', () => {
+    expect(() => {
+      createActions({});
+    }).toThrow('Action types must be not empty!');
   });
 });

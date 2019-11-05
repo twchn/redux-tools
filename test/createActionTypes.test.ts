@@ -1,7 +1,7 @@
 import { createActionTypes } from '../src';
 
 describe('test the generating action types function', () => {
-  it('should create three default action types', () => {
+  it('should return three default action types', () => {
     const baseType = 'type';
     const expectedActionTypes = {
       REQUEST: `${baseType}_REQUEST`,
@@ -12,8 +12,8 @@ describe('test the generating action types function', () => {
     expect(createActionTypes(baseType)).toEqual(expectedActionTypes);
   });
 
-  it('should create specified action types', () => {
-    const baseType = 'type';
+  it('should return specified action types', () => {
+    const baseType = 'TYPE';
     const types = ['SUCCESS', 'FAILURE'];
     const expectedActionTypes = {
       [types[0]]: `${baseType}_${types[0]}`,
@@ -21,5 +21,15 @@ describe('test the generating action types function', () => {
     };
 
     expect(createActionTypes(baseType, types)).toEqual(expectedActionTypes);
+  });
+
+  it('should throw a error when base type is not a string', () => {
+    expect(createActionTypes).toThrow('Base type must be a non-empty string!');
+  });
+
+  it('should throw a error when types is not an array of strings', () => {
+    expect(() => {
+      createActionTypes('TYPE', []);
+    }).toThrow('Types must be an array of strings!');
   });
 });
