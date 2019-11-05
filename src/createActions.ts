@@ -7,12 +7,15 @@ import createAction from './createAction';
  * @returns {IActions<any>}
  */
 function createActions(actionTypes: IActionTypes): IActions<any> {
-  if (actionTypes == null) {
-    throw new Error('Action types must be not empty!');
+  if (typeof actionTypes !== 'object' || actionTypes == null) {
+    throw new Error('Action types must be an object!');
   }
   const types = Object.keys(actionTypes);
+  if (types.length === 0) {
+    throw new Error('Action types must be not empty!');
+  }
   return types.reduce((acc: IActions<any>, type: string) => {
-    acc[type.toLowerCase()] = createAction(actionTypes[type]);
+    acc[type.toLowerCase().replace(/([-_]\w)/g, g => g[1].toUpperCase())] = createAction(actionTypes[type]);
     return acc;
   }, {});
 }
