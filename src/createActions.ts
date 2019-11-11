@@ -6,7 +6,7 @@ import createAction from './createAction';
  * @param {IActionTypes} actionTypes
  * @returns {IActions<any>}
  */
-function createActions(actionTypes: IActionTypes): IActions<any> {
+function createActions<T extends IActions<any> = IActions<any>>(actionTypes: IActionTypes): T {
   if (typeof actionTypes !== 'object' || actionTypes == null) {
     throw new Error('Action types must be an object!');
   }
@@ -17,7 +17,7 @@ function createActions(actionTypes: IActionTypes): IActions<any> {
   return types.reduce((acc: IActions<any>, type: string) => {
     acc[type.toLowerCase().replace(/([-_]\w)/g, g => g[1].toUpperCase())] = createAction(actionTypes[type]);
     return acc;
-  }, {});
+  }, {}) as unknown as T;
 }
 
 export default createActions;
