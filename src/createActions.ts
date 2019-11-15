@@ -4,7 +4,7 @@ import createAction from './createAction';
 /**
  * generate multiple Flux Standard Action creators
  * @param {IActionTypes} actionTypes
- * @returns {IActions<any>}
+ * @returns {IActions<any> || IActionsTypes<T>}
  */
 function createActions<T extends object = {}>(actionTypes: IActionTypes)
   : ({} extends T ? IActions<any> : IActionsTypes<T>) {
@@ -18,7 +18,7 @@ function createActions<T extends object = {}>(actionTypes: IActionTypes)
     return types.reduce((acc: IActions<any>, type: string) => {
       acc[type.toLowerCase().replace(/([-_]\w)/g, g => g[1].toUpperCase())] = createAction(actionTypes[type]);
       return acc;
-    }, {}) as unknown as ({} extends T ? IActions<any> : IActionsTypes<T>);
+    }, {}) as ({} extends T ? IActions<any> : IActionsTypes<T>);
 }
 
 export default createActions;
