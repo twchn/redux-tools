@@ -1,9 +1,9 @@
 import { IAction, IActionCreator } from './typings';
 
 /**
- * generate a Flux Standard Action creator
+ * Generate a Flux Standard Action creator
  * @param {string} actionType
- * @returns {IActionCreator<any>}
+ * @returns {IActionCreator<T>}
  */
 function createAction<T>(actionType: string): IActionCreator<T> {
   if (typeof actionType !== 'string' || actionType === '') {

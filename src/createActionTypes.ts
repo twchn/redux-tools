@@ -7,7 +7,7 @@ const defaultTypes = [
 ];
 
 /**
- * generate multiple action types
+ * Generate multiple action types
  * @param {string} baseType
  * @param {string[]} types
  * @returns {IActionTypes}

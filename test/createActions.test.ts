@@ -36,11 +36,11 @@ describe('test the generating actions function', () => {
     const types = ['REQUEST', 'REQUEST_SUCCESS', 'REQUEST-FAILURE'];
     const actionTypes = createActionTypes('TYPE', types);
     const generatedActions = createActions<{
-      'request': { data: number },
-      'requestSuccess': { data: number },
-      'requestFailure': { data: number }
+      request: { data: number },
+      requestSuccess: { data: number },
+      requestFailure: { data: number }
     }>(actionTypes);
-    const payload = { data: 2 };
+    const payload = { data: 3 };
     const expectedActions = {
       request: { type: actionTypes.REQUEST, payload },
       requestSuccess: { type: actionTypes.REQUEST_SUCCESS, payload },

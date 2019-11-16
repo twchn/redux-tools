@@ -1,7 +1,7 @@
 import { IAction, IHandlers } from './typings';
 
 /**
- * generate reducer, see https://redux.js.org/recipes/reducingboilerplate#generating-reducers
+ * Generate reducer, see https://redux.js.org/recipes/reducingboilerplate#generating-reducers
  * @param {T} initialState
  * @param {IHandlers<T>} handlers
  * @returns {(state: T, action: IAction<any>) => T}
