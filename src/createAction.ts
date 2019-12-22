@@ -11,7 +11,7 @@ function createAction<T>(actionType: string): IActionCreator<T> {
   }
   return function actionCreator(payload?: T): IAction<T> {
     const action: IAction<T> = { type: actionType };
-    if (payload != null) {
+    if (payload !== undefined) {
       action.payload = payload;
     }
     return action;
